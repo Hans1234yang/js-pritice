@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script>
+    $(document).ready(function () {
+
+
+        ///1.
+        var a;
+        console.log(a);   // underfined 的意思是 已定义 ，未赋值
+
+        a = null;        // null 的意思是 已定义，已赋值，但是赋的值时 null
+        console.log(a);
+
+
+        //2.
+        //初始
+        var b = null;  //初始赋值为null，表明将要赋值为对象
+
+        //确定给对象赋值
+        b = ['abc', 12];
+
+        //最后
+        b = null;  //让b指向对象成为垃圾对象(被垃圾回收器回收)
+
+
+        //3. 
+        var c = {};   //c保存的是 后面对象的 地址 
+
+
+    });
+</script>
+

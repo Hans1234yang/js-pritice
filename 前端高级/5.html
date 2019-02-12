@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script>
+       ///关于引用类型赋值变量问题
+      //2个引用变量指向同一个对象，通过一个变量 修改对象的内部数据，另一个变量看到的也是修改后的内部数据
+    $(document).ready(function () {
+
+        var a = { name: 'tom' };  //a保存的是后面变量的地址
+
+        var b = a;           //把a保存的地址，拷贝一份赋值到 b中
+
+        a.name = 'jack';    ///类似指针的操作
+        console.log(b.name); 
+
+        a.age = 12;
+        console.log(b.age);
+    });
+</script>

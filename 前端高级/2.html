@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   
+
+</body>
+</html>
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script>
+    $(document).ready(function () {
+
+        ///1.基本类型
+        var a;
+        console.log(a, typeof a);
+        console.log(a === undefined);
+        console.log(a === 'undefined');
+
+        var b = 3;
+        console.log(typeof b === 'number');
+
+        var c = 'hello';
+        console.log(typeof c === 'string');
+
+        var d = null;
+        console.log(d === null);
+
+        //2对象类型
+        var b1 = {
+            b2: [1, 'abc', console.log],
+            b3: function () {
+                console.log('b3');
+                return function () {
+                    return "我叫张研广";
+                };
+            }
+        };
+
+        console.log(b1 instanceof Object , b1 instanceof Array);  //true false
+
+        console.log(b1.b2 instanceof Array, b1.b2 instanceof Object);// true true
+
+        console.log(b1.b3 instanceof Function, b1.b3 instanceof Object);
+
+        console.log(typeof b1.b3 === 'function');
+
+        console.log(b1.b2[2]);   //console.log() 本质上来说是 function
+
+        b1.b2[2]('输出Hello world'); 
+
+        console.log(b1.b3()());   //输出 b3 输出我叫 张研广
+
+        console.log(typeof b1.b2, '------typeof不能区分object与 array');   //typeof 不能区别  ojbect 与array
+
+        console.log(typeof d ,'-----typeof不能区分 ojbct与null');    //typeof不能区分 object与 null
+    });
+</script>
+
+
