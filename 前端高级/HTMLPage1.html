@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+    //js调用参数传递变量参数的时候，是值传递
+
+    //是传递的是 值的时候，就是值传递。 但是传递的是地址的时候，就是引用传递
+    $(document).ready(function()
+    {
+    //    var a = 123;
+    //    var b = 'abc';
+
+    //    var c = { name: 'hans' };
+    //    console.log(c);
+
+    //    c.age = 18;
+    //    console.log(c.name);
+
+
+        function fn(obj)
+        {
+
+            obj();
+        }
+
+        function TestFun()
+        {
+
+            console.log("大家好，我这个function已经成功传递了");
+        }
+
+      
+        fn(TestFun);
+        
+    });
+</script>

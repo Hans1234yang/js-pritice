@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript"> 
+    $(document).ready(function ()
+    {
+       
+
+        function fn(age) {
+            if (age < 18) {
+                console.log('未成年，再等等吧');
+            }
+
+           else if (age > 60) {
+                console.log('年龄太大了');
+            }
+            else {
+                console.log('年龄刚刚好');
+            }
+        }
+
+        fn(12);
+        fn(61);
+        fn(40);
+
+        //函数定义的两个方法
+        function fn1() {        //1.函数声明
+            console.log('hello world');
+        } 
+
+        var fn2 = function () {  //2.表达式
+            console.log('hi world');
+        };
+
+
+        var obj = {};
+        function testFun() {
+            this.xxx = '哈哈哈哈哈';
+        }
+
+        ///obj.testFun();   //不能直接调用，因为obj没有testFun这个function
+        testFun.call(obj);
+        console.log(obj.xxx);  //.call(obj) 可以让一个函数 指定任意对象的方法进行调用
+
+
+
+
+    });
+</script>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+
+    //函数由 两部组成 
+       //1. 属性  有属性名，属性值
+       //2. 方法 (方法属于特殊的属性)  属性值是 function
+    $(document).ready(function ()
+    {
+        var p = {
+            name: 'Tom',
+            age: 12,
+            setName: function (name) {
+                this.name = name;
+            },
+            setAge: function (age)
+            {
+                this.age = age;
+            }
+        };
+
+        //访问内部数据有两种方式
+
+
+
+        console.log(p.name);
+        p.setName('Hans');   //通过方法设置 name属性的值
+        console.log(p.name);
+
+        p['setAge'](60);
+        console.log(p.age);
+    });
+</script>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+    //js调用参数传递变量参数的时候，是值传递 
+
+    //是传递的是 值的时候，就是值传递。 但是传递的是地址的时候，就是引用传递
+    $(document).ready(function () {
+        var a = 3;
+        function fn(a) {
+            a = a + 1;
+        }
+
+        fn(a);     // 全局变量保存的数值传递给局部变量 。
+        // 但是局部变量的影响范围是 函数内，函数结束后，就取消了。
+
+        console.log(a);  //全局变量依然是3
+
+
+
+        function fn2(obj) {
+            console.log(obj.name);
+        }
+
+        var obj = { name: 'Tommy Boy' };
+
+        var obj22 = obj;    //把obj 保存的对象的地址，拷贝赋值给 obj22，此时obj22保存的是地址
+
+        fn2(obj22);
+
+        var obj1 = { name: 'name' };
+        var obj2 = obj1;
+
+
+
+        var a1 = 3;
+        var obj11 = {};  //此时堆存储数据， obj存储对象的地址
+
+        obj11 = undefined;/// 此时obj11没有指向 对象，对象成为垃圾对象。会被垃圾回收器回收 
+
+        function fn3()
+        {
+            var b = {};
+        };
+        fn3(); //这个function执行完后。 局部变量b会自动释放，然后对象没有指，然后对象会被垃圾回收器回收
+    });
+</script>

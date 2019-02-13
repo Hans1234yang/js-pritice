@@ -32,19 +32,21 @@
         fn(a);   //调用函数
         console.log(a.name);    //此时，对象的name 变成Hans
 
-        var c = { name : 'jenny' }
+        var c = { name: 'jenny' };
         var d = c;                //d把 c中保存的地址值， 拷贝一份，并保存。 c,d, 指向同一个对象
         c = { name: 'nash' };     //c指向新的对象 ，但是d 还是指向原来的对象
         console.log(c.name);
         console.log(d.name);
 
-        function fn22(obj)      //传进去一个 指针
+        function fn22(obj)      //可以可以 想象为，赋值运算，调用函数的实参，拷贝地址到形参这里。两个变量保存同一个地址
         {
-            obj = { name: "kkk" };   //该变量 指向新的对象。 保存新的 地址
-        };
+            obj = { name: "kkk" };   //该变量 指向新的对象。 保存新的 地址. obj。 c 变量依然指向 原来的对象 
+        }
 
         fn22(c);
         console.log(c.name);   //输出的依然是 nash 因为 ，
                                 //函数执行完后，局部变量会被销毁，然而后面那个对象kkk，成为没有变量指向的对象，就成为了垃圾对象，也会被回收
-    });
+
+          //c不变的原因是,  1. c指向的对象不变 
+    });                //2.   c上面的属性值没有变 
 </script>
