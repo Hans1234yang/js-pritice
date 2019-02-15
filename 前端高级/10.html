@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+    ///匿名函数自调用
+
+    //作用
+    //1. 隐藏实现
+    //2.不会污染全局变量
+    //3. 用来编写js模块
+    $(document).ready(function ()
+    {
+
+        (function () {    //匿名函数自调用
+            var a = 3;
+            console.log(a + 3);     //他是一个函数，没有名字，自己调用自己
+        })()
+
+            ; (function () {
+                var a = 1;
+                function test() {
+                    console.log(a++);
+                }
+                window.$ = function () {
+                    return {
+                        test: test
+                    };
+                };
+        })();
+
+        $().test();  //1.$是一个函数，2.$执行后，返回的是一个对象
+    });
+</script>

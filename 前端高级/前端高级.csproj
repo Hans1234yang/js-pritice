@@ -50,6 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="10.html" />
+    <Content Include="15.html" />
+    <Content Include="16.html" />
     <Content Include="2.html" />
     <Content Include="3.html" />
     <Content Include="5.html" />
