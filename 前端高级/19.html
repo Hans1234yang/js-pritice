@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        //1.读取对象的属性时，会自动到原型链中查找
+        function Fn() {
+
+        }
+        Fn.prototype.test='xxx';
+        var fun1 = new Fn();
+        console.log(fun1.test, fun1);  //读取对象的属性，自动再原型链中查找
+
+        var fun2 = new Fn();
+        //2.设置对象的属性，不会在原型链中添加。 
+        //如果对象没有该属性，那么属性添加在对象上。
+        fun2.test = 'yyy'
+        console.log(fun2.test);
+        console.log(fun1.test);
+
+        //3. 方法一般添加在原型中， 
+           //属性在 构造函数，添加到对象本身
+
+        function Person(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        //方法添加到原型链中
+        Person.prototype.setName = function (name) {
+            this.name = name;
+        };
+
+        var p1 = new Person('Tom', 12);
+        p1.setName('Hans');
+        console.log(p1.name, p1.age);
+
+        var p2 = new Person('jenny', 33);
+        p2.setName('judy');
+        console.log(p2.name, p2.age);
+
+        console.log(p1.__proto__ === p2.__proto__);  ///p1和p2都是同一个对象的实例
+    });
+</script>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        //1. 原型链的尽头是 Object原型的 隐式原型属性
+        function Foo() { }
+        var fo1 = new Foo();
+
+         //2. a是b的实例的意思是， a的隐式原型变量 等于b的 显示原型变量
+        console.log(fo1 instanceof Foo);
+        console.log(fo1 instanceof (Object));
+
+       
+    });
+</script>

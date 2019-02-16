@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+  
+    $(document).ready(function()
+    {
+        //1.函数默认的 显性原型属性 默认指向 空的object实例对象(object 是例外)
+        function Fn() {
+
+        }
+        console.log(Fn.prototype instanceof Object);
+        console.log(Function.prototype instanceof Object);
+        console.log(Object.prototype instanceof Object);  //object 的显性原型
+
+        ////2.所有的函数 都是 Function的实例，包括Function
+        console.log(Fn instanceof Function);
+        console.log(Function instanceof Function);
+        console.log(Function.__proto__ === Function.prototype);
+        ////3.object·原型对象是原型链的尽头
+        console.log(Object.prototype.__proto__);
+    });
+
+   
+</script>

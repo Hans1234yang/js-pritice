@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        function Fun() {
+
+        }
+
+        console.log(Fun.prototype);   ///显式原型属性 指向object对象。(对象实例)
+        console.log(Fun.prototype instanceof Object); 
+
+        var fun = new Fun();
+        
+
+        Fun.prototype.test = function () {
+            console.log("显式原型对象添加的方法");
+        };
+
+        fun.test();
+    });
+</script>

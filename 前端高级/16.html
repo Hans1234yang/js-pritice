@@ -20,11 +20,23 @@
         function Fun() {
 
         }
-        //显式原型  每个函数都有一个prototype
+        //1.显式原型  每个函数都有一个prototype
         console.log(Fun.prototype);
 
         var fun = new Fun();
-        //隐式原型  每个实例对象都有 __proto__
+        //2.隐式原型  每个实例对象都有 __proto__
         console.log(fun.__proto__);
+
+        //3.方法的显式原型属性的值等于 实例对象的隐性原型属性的值 。
+        console.log(Fun.prototype === fun.__proto__);
+
+        //4.通过显性原型属性给object对象 添加方法
+        Fun.prototype.test = function ()
+        {
+            console.log('这是一个测试方法');
+        }
+
+        //5.通过隐式原型属性，调用方法
+        fun.test();
     });
 </script>
