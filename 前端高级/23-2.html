@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var a = 10;            //1.进入全局上下文作用域
+        var bar = function () {
+            var b = 5;
+            foo(x + b);    //调用foo函数，进入foo函数上下文
+        }; 
+
+        var foo = function () {
+            var c = 5;
+            console.log(a + c + y);
+        };
+
+        bar(10);              //2.调用bar函数，进入bar函数上下文
+            
+    });
+</script>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+
+<script type="text/javascript">
+
+    //函数提升，变量提升知识点
+    $(document).ready(function ()
+    {
+        var a = 3;
+        function fn() {
+            console.log(a);          //这里的意思是  var a;  //函数提升，变量提升 
+            var a = 4;                    ///console.log(a)
+                                       //    a=4
+        }
+        fn();
+        //这里的显示是underfined 。
+
+
+        console.log(b);   //变量提升
+        console.log(fn2);  //函数提升
+
+        console.log(fn3);   //只能变量提升，  因为是变量式定义函数了。
+
+        var b = 3;
+        function fn2() {
+            console.log('我是function2');
+        }
+
+        var fn3 = function () {
+            console.log('我是function3');
+        };
+
+         
+    });
+</script>

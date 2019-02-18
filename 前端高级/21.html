@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+     //21.面试题
+    //第一题
+    function A() {
+
+    }
+    A.prototype.n = 1;
+
+    var b = new A();
+
+    A.prototype = {
+        n: 2,
+        m: 3
+    };
+
+    var c = new A();
+
+    console.log(b.n,b.m,c.n,c.m);
+
+
+    //第二题
+    var F = function () { };
+
+    Object.prototype.a = function () {
+        console.log('我是Objectd的显示原型的a属性');
+    };
+
+    Function.prototype.b = function () {
+        console.log('我是Function的显示原型的b属性');
+    };
+
+    var f = new F();
+    f.a();  //true
+    f.b();  //false
+    F.a();   //true
+    F.b();    //true
+</script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+

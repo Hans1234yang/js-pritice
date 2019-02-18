@@ -21,9 +21,18 @@
         var fo1 = new Foo();
 
          //2. a是b的实例的意思是， a的隐式原型变量 等于b的 显示原型变量
-        console.log(fo1 instanceof Foo);
-        console.log(fo1 instanceof (Object));
+        //console.log(fo1 instanceof Foo);
+        //console.log(fo1 instanceof (Object));
 
+        console.log(Object instanceof Function);   //true
+
+        console.log(Object instanceof Object);  //true
+         
+        console.log(Function instanceof Function);  //true
+
+        console.log(Function instanceof Object);  //true
+
+        console.log(Object instanceof Foo);     //false
        
     });
 </script>

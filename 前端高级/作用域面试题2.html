@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        var fn = function () {
+            console.log(fn);
+        }
+
+        fn();
+
+        var obj = {
+            fn2: function () {
+                console.log(this.fn2);
+            }
+        }
+        obj.fn2();
+    });
+</script>
