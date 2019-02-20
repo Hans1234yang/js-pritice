@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+    //闭包的类型：
+
+   //1. 将函数作为另外一个函数的返回值
+    function fn1() {
+        var a = 2;
+        function fn2() {
+            a++;
+            console.log(a);
+        }
+        return fn2;
+    }
+
+    var f = fn1();  //f 现在保存的是 返回值 fn2函数 。 所以调用f，调用的是内部函数 
+    console.log(f);
+    f();
+    f();
+
+    fn2();
+
+    //2. 将函数作为实参传给另外一个函数
+
+    function showDelay(msg, time)
+    {
+        setTimeout(function () {
+            alert(msg);              ///setTimeout是一个函数(),内部有一个函数，作为一个参数传递
+        }, time);
+    }
+    showDelay('Say hi',3000);
+</script>

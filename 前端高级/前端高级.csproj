@@ -62,13 +62,22 @@
     <Content Include="22.html" />
     <Content Include="23-2.html" />
     <Content Include="23.html" />
+    <Content Include="29闭包.html" />
     <Content Include="3.html" />
+    <Content Include="30闭包.html" />
+    <Content Include="31闭包.html" />
+    <Content Include="32.html" />
+    <Content Include="34闭包的应用1.html" />
+    <Content Include="34闭包的应用2.html" />
+    <Content Include="35闭包的缺点.html" />
     <Content Include="5.html" />
     <Content Include="6.html" />
     <Content Include="7.html" />
     <Content Include="8.html" />
     <Content Include="9.html" />
     <Content Include="HTMLPage1.html" />
+    <Content Include="myModule1.js" />
+    <Content Include="myModule2js.js" />
     <Content Include="作用域面试题2.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

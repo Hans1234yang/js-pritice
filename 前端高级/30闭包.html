@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script type="text/javascript">
+    function fn1()
+    {
+        //函数产生的条件 
+        //1. 函数嵌套函数 
+
+        //2  内部函数调用 外部函数的变量
+
+        var a = 3;
+        var b = 'text';
+        function fn2()             ///执行函数定义就能产生闭包，不需要调用内部函数
+        {
+            console.log(a);
+            alert(a);
+        }
+
+        ///fn2();
+    }
+    fn1();
+</script>

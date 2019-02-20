@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+    //闭包产生的条件
+    //1. 函数嵌套函数
+    //2. 内部函数 调用外部函数的变量
+
+    //闭包的作用 
+    //1. 延长了局部变量的声明周期 。函数执行完后，内部变量仍然存在一段时间
+    //2. 
+
+
+    function fn1()
+    {
+        var a = 3;
+        function fn2()
+        {
+            a++;
+            console.log(a);
+        }
+        function fn3()
+        {
+            a--;
+            console.log(a);
+        }
+
+        return fn3;   //返回fn3函数
+    }
+
+    var f = fn1();    //fn1 执行完后， 返回fn3的地址。此时，fn1，消失。fn3也消失。 但是fn3 对应的对象的地址，保存在f中。
+                                                  //所以是f 保存的是 fn3 函数的地址， 感觉类似于c语言的指向函数的指针 。
+
+
+</script>
+

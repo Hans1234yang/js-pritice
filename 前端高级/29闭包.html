@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button>测试111</button>
+    <button>测试222</button>
+    <button>测试333</button>
+</body>
+</html>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script type="text/javascript">
+
+    //循环遍历+ 监听
+    var btns = document.getElementsByTagName('button');
+    //console.log(btns);
+    //console.log(btns.length);
+
+    //alert(btns[0].textContent);  //自己测试玩的
+    //alert(btns[1].textContent);
+    //alert(btns[2].textContent);
+
+    ////第一个方法
+    //for (var i = 0, Length = btns.length; i < Length; i++)     //Length是3
+    //{    
+    //    var btn = btns[i];   ///这里循环3此 能够抓住每一个 button
+
+    //    btn.index = i;
+    //    console.log(btn.textContent);   //输出这个button元素的text名字
+
+    //    btn.onclick = function () {
+    //        alert('第' + (this.index + 1) + '个');
+    //    };
+    //}
+
+    ///闭包的方法
+    for (var i = 0, Length = btns.length; i < Length; i++)
+    {
+        (function (i)
+        {
+            var btn = btns[i];
+            btn.onclick = function ()
+            {
+                alert('第'+(i+1)+'个');
+            }
+
+        })(i);
+    }
+
+</script>
