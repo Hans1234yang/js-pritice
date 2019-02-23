@@ -19,41 +19,41 @@
     //是传递的是 值的时候，就是值传递。 但是传递的是地址的时候，就是引用传递
     $(document).ready(function()
     {
-    //    var a = 123;
-    //    var b = 'abc';
+        var a = 123;
+        var b = 'abc';
 
-    //    var c = { name: 'hans' };
-    //    console.log(c);
+        var c = { name: 'hans' };
+        console.log(c);
 
-    //    c.age = 18;
-    //    console.log(c.name);
+        c.age = 18;
+        console.log(c.name);
 
 
-        //function fn(obj)
-        //{
+        function fn(obj)
+        {
 
-        //    obj();
-        //}
+            obj();
+        }
 
-        //function TestFun()
-        //{
+        function TestFun()
+        {
 
-        //    console.log("大家好，我这个function已经成功传递了");
-        //}
+            console.log("大家好，我这个function已经成功传递了");
+        }
 
       
-        //fn(TestFun);
+        fn(TestFun);
 
 
-        ////变量提升，尝试
-        //console.log(aaa);
-        //var aaa = 3
+        //变量提升，尝试
+        console.log(aaa);
+        var aaa = 3
 
-        ////函数提升尝试
-        //kkk();
-        //function kkk() {
-        //    console.log('我正在测试函数提升');
-        //}
+        //函数提升尝试
+        kkk();
+        function kkk() {
+            console.log('我正在测试函数提升');
+        }
 
 
 

@@ -18,5 +18,5 @@
     return {
         something: doSomethin,
         otherthing: doOtherthing
-    }
+    };
 }

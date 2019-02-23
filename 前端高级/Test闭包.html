@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //fn1();
+
+        //保存的是内部函数 fn4的地址
+        var x = fn3();
+
+        //通过调用内部函数的地址, 执行内部函数
+        x();
+        x();
+        console.log(x);
+
+
+        //console.log(a);   //显示a is not defined  无法从外部 直接访问内部 变量
+
+        //闭包的作用
+        //1.延长 局部变量 的声明周期
+        //2.让外部, 可以访问函数内的局部变量
+
+        //闭包的弊端
+        //1.占用内存的时间很长
+
+        //2. 需要及时把 无用的闭包，释放掉，因为不释放的话，会造成内存泄漏
+
+        x = null;  //让 x 不保存 fun4  的地址了.此时 栈上，没有变量保存 fn4的·地址，所以 fn4,已经成为垃圾对象，被垃圾回收器回收了 
+
+        x();   //此时 x 保存的 是null的值，不是对象的地址，所以无法 调用
+    });
+
+    //闭包的形成条件 
+    //1.函数嵌套函数
+
+    //2.内部函数调用外部函数的变量
+    function fn1()
+    {
+        var a = 3;
+        function fn2()        ///定义内部函数后，不需要执行。 就产生闭包了 
+        {
+            a++;
+            console.log(a);
+        }
+    }
+
+
+    ///返回闭包 内部函数的 地址
+    function fn3()
+    {
+        var a = 10;
+        function fn4()
+        {
+            a++;
+            console.log(a);
+        }
+        return fn4;
+    }
+
+
+    
+
+
+
+
+</script>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

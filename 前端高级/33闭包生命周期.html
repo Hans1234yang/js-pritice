@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    //闭包的生命周期
+    // 产生:内部函数 定义好的时候，闭包易产生。
+
+    //死亡: 嵌套的内部函数，成为了垃圾对象时
+    $(document).ready(function () {
+        var f = fn1();
+        f();    //调用函数
+        f = null; //闭包死亡(因为闭包的函数对象成为了垃圾对象)
+    });
+
+    function fn1() {
+        var a = 2; 
+        //此时闭包已经产生，(函数提升，内部函数对象已经创建了)
+        function fn2() {
+            a++;
+            console.log(a);       
+        }
+        return fn2;
+    }
+
+
+
+</script>

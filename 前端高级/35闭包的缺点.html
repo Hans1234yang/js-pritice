@@ -9,10 +9,37 @@
 
 </body>
 </html>
-<script type="text/javascript">
-    //35.闭包的缺点
 
-    //(1)函数执行完后，函数
+
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    //35.(一)闭包的缺点
+
+    // 1.函数执行完后，函数内部的局部变量 释放，占用时间过长
+    // 2.容易造成 内存泄漏
+
+    // (二) 解决方法
+    // 1.能不用闭包就不用闭包
+    //2. 及时释放
+
+    $(document).ready(function () {
+
+        var f = fn1();
+        f(); //调用函数
+        f = null;   //释放函数，让函数成为垃圾对象，被垃圾回收器 回收。
+        //f();
+    });
+
+    function fn1() {
+        var a = 3;
+        function fn2() {
+            a++;
+            console.log(a);
+        }
+        return fn2;
+    }
+
+
 </script>
 
 
