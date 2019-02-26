@@ -15,11 +15,15 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        //24.函数 执行上下文 
+        //函数执行上下文在调用函数的时候，产生。 
 
-        var a = 10;            //1.进入全局上下文作用域
+        //定义函数的时候，并没有函数执行上下文对象的产生
+
+        var a = 10;            //1.产生全局执行上下文，window 
         var bar = function () {
             var b = 5;
-            foo(x + b);    //调用foo函数，进入foo函数上下文
+            foo(x + b);    //  3.调用foo函数，产生foo函数执行上下文
         }; 
 
         var foo = function () {
@@ -27,7 +31,9 @@
             console.log(a + c + y);
         };
 
-        bar(10);              //2.调用bar函数，进入bar函数上下文
+        bar(10);             //2.调用bar函数，进入bar函数上下文
+
+        ///1.全局代码执行前，js
             
     });
 </script>

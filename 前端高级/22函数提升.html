@@ -16,14 +16,20 @@
 
 <script type="text/javascript">
 
-    //函数提升，变量提升知识点
+   
+
+
+    //变量提升， 变量在定义之前， 就可以访问
+
+    //函数提升，函数在 定义之前， 就可以调用
     $(document).ready(function ()
     {
         var a = 3;
         function fn() {
-            console.log(a);          //这里的意思是  var a;  //函数提升，变量提升 
-            var a = 4;                    ///console.log(a)
-                                       //    a=4
+            console.log(a);               //这里的运行效果是这样子的，
+            var a = 4;                       ///var a
+                                             ///console.log(a)
+                                             //    a=4
         }
         fn();
         //这里的显示是underfined 。

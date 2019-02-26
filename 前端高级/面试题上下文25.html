@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<script type="text/javascript">
+    //1.问题1 ： 输出结果
+    
+    //2.问题2 :  产生了  5个上下文 
+    
+    console.log("开始" + a);
+    var a = 1;
+    Test(1);
+    function Test(a) {
+        if (a == 4) {
+            return a;
+        }
+
+        console.log("函数 begin" + a);
+        Test(a+1);
+        console.log("函数 end"+ a);
+    }
+
+    console.log("结束  "+a); 
+</script>
+
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    
+</body>
+</html>

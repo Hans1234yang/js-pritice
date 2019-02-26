@@ -1,0 +1,28 @@
+﻿
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    var a = 2;
+    function fn1() {
+        var b = 3;
+        function fn2() {
+            var c = 4;
+            console.log(a);  //先从fn2 作用域找，找不到，到fn1作用域找，找不到再到全局作用域找
+            console.log(b);   //先从fn2 作用域找，找不到到fn1作用域。在fn1作用域找到了
+            console.log(c);    //先从fn2 作用域找，找到了
+            console.log(d);    //从fn2作用域找，找不到去fn1作用域，还是找不到，全局作用域找还是没找到，报错
+                    //d is not defined
+        }
+        fn2();
+    }
+    fn1();
+    console.log();
+</script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    ///1.内存溢出
+    //*是一个运行出现的错误
+    //* 程序所需要的内存，超过剩余内存时，就会报内存溢出的错误
+
+    //2. 内存泄露
+    //*占用的内存，没有及时释放
+    // 内存泄露过多，容易导致内存溢出
+
+    //常见的内存泄露
+    //(1) 意外的全局变量
+    //(2) 没有及时清理计时器 和回调函数 
+    //(3) 闭包
+
+    //1.内存溢出的例子
+    var obj = {};
+    for (var i = 0; i < 10000; i++) {
+        obj[i] = new Array(100000)
+        console.log("......");
+    }
+
+    //此时必须要对象，让obj 指向null。因为obj指向的对象，实在太大了
+    //obj = null;
+
+
+    ///2.内存泄漏
+    //(1) 意外的全局变量
+    function fn1() {
+        //没有加 var 的变量，会自动变成全局变量。
+        a = new Array(100000)
+        {
+            console.log(a);
+        }
+    }
+    fn1();
+
+    //(2)启动循环 定时器后，不清理
+    var intervalid = setInterval(function () {
+        console.log('定时器中输出的方法');
+    }, 1000);
+
+
+    ///clearInterval(intervalid);
+
+    function fn2() {
+        var a = 3;
+        function fn3() {
+            a++;
+            console.log(a);
+        }
+    }
+
+    var f = fn2();
+    f();
+    f = null;   //让对象成为垃圾对象，被垃圾回收器回收
+</script>

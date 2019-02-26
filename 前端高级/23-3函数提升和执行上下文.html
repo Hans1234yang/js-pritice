@@ -1,0 +1,68 @@
+﻿
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+     //23 上下文 
+
+
+    ////(1)  全局执行上下文
+
+    //a变量 在 a变量定义之前，就可以访问到 
+    console.log(a, window.a);   //a相当于  window.a
+
+    //在执行全局代码的时候，把window 确实为全局执行上下文
+
+    //在执行全局数据前，
+    //将var的 全局变量，添加为 windows的属性
+    //function 定义为window 的方法
+
+    //所以这里的a， 是从window 找到的 a属性 
+    //这里的b  是从window 找到的 b方法()
+
+
+    //b 函数 在b 函数定义之前，就可以调用
+    console.log(b);  //b相当于 window.b();
+
+    b();
+    window.b();
+    console.log(this);      //输出window
+
+
+
+    var a = 3;
+    function b() {
+        console.log("我是b");
+    }
+
+    console.log("--------------");
+
+    //// (2) 函数执行上下文
+    function fn3(a1) {
+        console.log(a1);    //输出20
+        console.log(a2);    //输出 undefined
+        a3();                //输出，我是函数a3();
+
+        console.log(arguments)  //输出伪数据 20,30
+        var a2 = 3;
+
+        function a3() {
+            console.log("我是函数a3");
+        }
+    }
+
+    fn3(20, 30);
+
+
+
+</script>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   
+</body>
+</html>

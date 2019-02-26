@@ -4,9 +4,25 @@
 
 <script src="jquery-3.3.1.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
-        
-    });
+    //27 作用域
+    var a = 10;
+    var b = 20;
+    function fn1(x) {
+        var a = 100;
+        var c = 300;
+        console.log(a, b, c, x);
+
+        function bar(x) {
+            var a = 10000;
+            var d = 400;
+            console.log(a,b,c,d,x);
+        }
+        bar(200);
+        bar(300);
+    }
+    fn1(6666);
+
+  
 </script>
 
 

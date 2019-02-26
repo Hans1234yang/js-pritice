@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<script type="text/javascript">
+
+    //1.面试题
+    var a;
+    function a() {
+        console.log("Hello world");
+    }
+    console.log(typeof a);  //先 执行 变量提升，再执行函数提升。   function
+
+    window.b = 1000;
+    //面试题 2
+    if (b in window )
+    {
+        console.log("b在 window中");
+    }
+    console.log(b in window);
+
+    //面试题  3
+    var c = 3;
+    function c(k) {
+        console.log(k)
+    }
+
+    c(5);   //会 报错
+
+    //因为 变量提升的执行的结果 的意思是
+
+    // var c;
+    //functon c(kkk)
+    //{
+   //     console.log(kkk);
+    //}
+    //c=3;
+    //c(5);    //会显示 c不是 函数，不能调用
+
+</script>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+
+</body>
+</html>
