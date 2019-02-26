@@ -73,7 +73,12 @@
     <Content Include="34闭包的应用1.html" />
     <Content Include="34闭包的应用2.html" />
     <Content Include="35内存泄漏.html" />
+    <Content Include="37对象创建模式1.html" />
     <Content Include="35闭包的缺点.html" />
+    <Content Include="37对象创建模式2.html" />
+    <Content Include="37对象创建模式3.html" />
+    <Content Include="37对象创建模式4.html" />
+    <Content Include="37对象创建模式5.html" />
     <Content Include="5.html" />
     <Content Include="6.html" />
     <Content Include="7.html" />

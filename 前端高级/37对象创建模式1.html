@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+    //方法一: object 构造函数模式
+    //*套路，先创建空的Object对象 ，再动态添加属性/方法
+    //*试用场景:起始时不确定对象的内部数据
+    //*问题:语句太多
+    var p = new Object();
+    p.age = 12;
+    p.name = "Tom";
+    p.SetName = function (name) {
+        this.name = name;
+    };
+
+
+    console.log(p.name, p.age);
+    ///测试;
+    p.SetName('Hans');
+    console.log(p.name, p.age);
+</script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

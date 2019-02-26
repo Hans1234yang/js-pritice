@@ -1,0 +1,43 @@
+﻿
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+     // 方法四:自定义构造函数模式
+    // 套路: 自定义构造函数，通过new 创建对象 ,
+    //适用场景: 需要 创建多个类型 确定的对象 
+    //内存 :每个对象都有 相同的数据，浪费数据
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.setName = function (nameNew) {
+            this.name = nameNew;
+        }
+    }
+
+    var p1 = new Person('Tom', 12);
+    console.log(p1.name, p1.age);
+    p1.setName('hans');
+    console.log(p1.name, p1.age);
+    console.log(p1 instanceof Person);
+
+    function Student(name, stuid)
+    {
+        this.name = name;
+        this.stuid = stuid;
+    }
+    var s1 = new Student('Hans', 12);
+    console.log(s1);
+    console.log(s1 instanceof Student);
+
+
+
+</script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    //方式5 构造函数+原型的组合模式
+    //* 套路:自定义构造函数，属性在 函数中初始化，方法添加到原型上
+    //适用场景: 需要创建多个类型确定的对象
+
+    function Person(name,age) {   ///在构造函数中，只初始化一般属性
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype.setName = function (nameNew) {
+        this.name = nameNew;
+    }
+
+    var p1 = new Person('Hans', 12);
+    var p2 = new Person('Jack', 27);
+    console.log(p1);
+    console.log(p2);
+</script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

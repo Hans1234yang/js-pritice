@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<script src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+   // 对象创建模式 2:对象字面量模式
+
+    //* 套路，使用{}创建对象 ，同时指定属性/方法
+    //* 适用场景:起始 时创建内部 数据是确定的 
+    //* 问题:如果创建多个对象，有重复代码 
+
+    var p = {
+        name: 'Tom',
+        age: 12,
+        setName: function (name) {
+            this.name=name
+        }
+    };
+
+    console.log(p.name, p.age);
+    p.setName('Hans');
+    console.log(p.name, p.age);
+</script>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
