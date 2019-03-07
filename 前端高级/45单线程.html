@@ -1,0 +1,29 @@
+﻿
+<script src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+
+    //回调函数是 异步执行的。 
+
+    setTimeout(function () { console.log('22222') }, 2000);
+
+    function fn1() {
+        console.log("hello world");
+    }
+
+    fn1();
+    
+    console.log('alert函数之前');
+    alert('------');   //暂停当前主线程的执行，也暂停计时。点击确定后，恢复主线程的执行和计时
+    console.log('alert函数之后');
+
+</script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

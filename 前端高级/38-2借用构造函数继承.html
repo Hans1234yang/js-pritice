@@ -1,0 +1,42 @@
+﻿
+<script src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+      //2. 借用构造函数继承，（假的）
+
+      //在子类的构造函数中，调用父类的构造函数
+
+
+     //父函数
+    function Person(name,age) { 
+        this.name = name;
+        this.age = age;
+    }
+
+    //子函数
+    function Student(name, age, price) {
+        Person.call(this, name, age);
+        this.price = price;
+    }
+
+
+    //上面的子函数相当于
+    //function Student1(name,age,price) {
+    //    this.name = name;
+    //    this.age = age;
+    //    this.price = price;
+    //}
+
+    //函数名.call 
+
+    //并没有什么 继承，只是 借用构造函数而已，简化代码而已
+
+</script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+</body>
+</html>

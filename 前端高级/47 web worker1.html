@@ -1,0 +1,31 @@
+﻿
+<script src="jquery-3.3.1.js"></script>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input placeholder="第n个斐波拉契数" id="input1"/>
+    <button id="btn1">点击</button>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    ///1 1 2 3 5 8
+    function Fabolaqi(n) {
+        return n <= 2 ? 1 : Fabolaqi(n - 1) + Fabolaqi(n-2);
+    }
+
+    //获取input
+    var input = document.getElementById('input1');
+
+    document.getElementById('btn1').onclick = function () {
+        var theValue = input.value;
+        var result = Fabolaqi(theValue);
+        alert(result);
+    }
+
+</script>

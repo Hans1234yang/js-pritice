@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<script src="jquery-3.3.1.js"></script>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input placeholder="想求出第n个斐波拉契数" id="input1" />
+    <button id="btn1">点击</button>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    //1. 将大计算量，计算时间长的操作放在 分线程中
+    //2.  分线程 是不能操作dom 的，
+    //3.  只有主线程 才能够操作dom
+    //4. h5 这个标准，并没有改变js 单线程的本质。只有主线程才能够更新界面
+
+    //获取inputdom元素
+    var input = document.getElementById('input1');
+
+    //点击事件触发
+    document.getElementById('btn1').onclick = function () {
+        var theValue = input.value;
+
+        //1.创建worker对象
+        var worker = new Worker('worker.js');
+
+        //2.向分线程发送信息
+        worker.postMessage(theValue);
+        console.log("主线程已经向分线程发送" + theValue);
+
+
+        //3.绑定接受信息的监听
+        worker.onmessage = function (event) {
+            console.log("主线程收到分线程 发来的数据" + event.data);
+            alert(event.data);
+        }
+    }
+
+
+</script>

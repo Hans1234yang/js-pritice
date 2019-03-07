@@ -1,0 +1,29 @@
+﻿
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button id="btn1">测试按钮 </button>
+</body>
+</html>
+
+<script type="text/javascript">
+    // 函数初始化的代码有: 1.绑定 dom监听事件  2. 设置 回调函数，3.发送ajax 请求代码
+
+    //定时器
+    setTimeout(function () { console.log("定时器开始执行了") }, 2000);
+  
+    //dom监听事件
+    document.getElementById('btn1').onclick = function () {
+        console.log("我已经点击了button了");
+    }
+
+    function Fn1() {
+        console.log("Hello world");
+    }
+    Fn1();
+</script>

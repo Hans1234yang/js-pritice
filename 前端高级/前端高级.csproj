@@ -79,6 +79,14 @@
     <Content Include="37对象创建模式3.html" />
     <Content Include="37对象创建模式4.html" />
     <Content Include="37对象创建模式5.html" />
+    <Content Include="38-1原型链继承.html" />
+    <Content Include="38-2借用构造函数继承.html" />
+    <Content Include="38-3组合继承.html" />
+    <Content Include="45单线程.html" />
+    <Content Include="44定时器.html" />
+    <Content Include="46事件循环模型.html" />
+    <Content Include="47 web worker1.html" />
+    <Content Include="47 work worker 2.html" />
     <Content Include="5.html" />
     <Content Include="6.html" />
     <Content Include="7.html" />
@@ -90,6 +98,7 @@
     <Content Include="jquery-3.3.1.js" />
     <Content Include="myModule1.js" />
     <Content Include="myModule2js.js" />
+    <Content Include="worker.js" />
     <Content Include="面试题作用域.html" />
     <Content Include="面试题函数提升.html" />
   </ItemGroup>
